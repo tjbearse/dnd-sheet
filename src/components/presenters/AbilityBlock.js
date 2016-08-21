@@ -1,11 +1,13 @@
 import React, {PropTypes} from 'react'
 import AbilityAndSkills from './AbilityAndSkills.js'
 
+import tjStrap from '../../css/tjStrap.js'
+
 const AbilityBlock = (abilities) => {
 	return <div>
 			proficiency bonus
 			inspiration
-			<ul>
+			<ul style={tjStrap.nonlist}>
 				{ Object.keys(abilities).map((abilityKey)=>(
 					<li key={abilityKey}>
 						<AbilityAndSkills  {...abilities[abilityKey]} />

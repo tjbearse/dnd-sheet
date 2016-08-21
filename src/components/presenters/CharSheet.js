@@ -15,10 +15,23 @@ const CharSheet = () => {
 		marginLeft: 'auto',
 		marginRight: 'auto',
 		marginTop: '60px',
+		padding: '18px 30px',
 		backgroundColor: '#fff',
-		padding: '18px 30px'
+		position: 'relative',
+		zIndex: -2
 	}
 	return <div style={pageStyle}>
+		<div style={{
+			backgroundImage: 'url(bg.png)',
+			backgroundSize: '100%',
+			position: 'absolute',
+			right: 0,
+			left: 0,
+			top: 0,
+			bottom: 0,
+			opacity: .2,
+			zIndex: -1
+		}}/>
 		<div style={{
 			width: '100%',
 			marginBottom: '8px',

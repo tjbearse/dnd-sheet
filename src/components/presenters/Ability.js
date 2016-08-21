@@ -4,7 +4,12 @@ import TE from './TE.js'
 
 const Ability = ({ability, onChangeRaw}) => {
 	let mod = getAbilityModifier(ability.raw) || 0
-	return <div>
+	return <div style={{
+		border: '1px solid',
+		width: 85,
+		height: 85,
+		backgroundColor: '#fff'
+	}}>
 		<TE
 			style={{
 				width: 24
