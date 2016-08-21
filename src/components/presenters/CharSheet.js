@@ -1,18 +1,17 @@
 import React from 'react'
-import
-// NameBlock,
-		AbilityBlockContainer
-		/*		HealthBlock,
-		PersonalityBlock,
-		AttacksBlock,
-		FeaturesBlock,
-		EquipmentBlock,
-		OtherBlock*/
-		from '../containers/AbilityBlockContainer.js'
+
+import AbilityBlockContainer from '../containers/AbilityBlockContainer.js'
+import NameBlockContainer from '../containers/NameBlockContainer.js'
+	/*		HealthBlock,
+	PersonalityBlock,
+	AttacksBlock,
+	FeaturesBlock,
+	EquipmentBlock,
+	OtherBlock*/
 
 const CharSheet = () => (
 	<div>
-		NameBlock
+		<NameBlockContainer />
 		<AbilityBlockContainer />
 		HealthBlock
 		PersonalityBlock

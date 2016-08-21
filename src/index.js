@@ -6,7 +6,6 @@ import reducer from './reducers/charSheet.js'
 import CharSheet from './components/presenters/CharSheet'
 
 let store = createStore(reducer)
-console.log('hi');
 render(
 	<Provider store={store}>
 		<CharSheet />
