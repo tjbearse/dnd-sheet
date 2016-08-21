@@ -1,12 +1,20 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-const MixedList = ({items}) => (
-	<ul>
-		{items.map(({Component, data})=>(
-			<Component { ...data } />
-		))}
-	</ul>
-)
+function listItem(Component, data) {
+	return <Component/>
+}
+
+function MixedList (clist) {
+	return class extends React.Component {
+		render(){
+			return <ul>
+				{clist.map(({component: Component, data})=>(
+				<Component {...data} />))}
+			</ul>
+		}
+	}
+}
 
 
-//MixedList.prop
+export default MixedList

@@ -1,27 +1,33 @@
 import React, {PropTypes} from 'react'
 import Ability from './Ability.js'
 import MixedList from './MixedList.js'
-//SavingThrowListItem from './
-//SkillListItem from '.'
+import SavingThrowListItem from './SavingThrowListItem.js'
+import SkillListItem from './SkillListItem.js'
 
-const AbilityAndSkills = ({ability, skills, savingThrow}) => (
-	<div>
+const AbilityAndSkills = ({ability, skills, savingThrow}) => {
+	let items = [
+		{
+			component: SavingThrowListItem,
+			data: {savingThrow, key: 'savingThrow'}
+		}
+		,
+		...(Object.keys(skills).map((skill) => ({
+			component: SkillListItem,
+			data: {
+				skill: Object.assign({key: skill}, skills[skill] ),
+				key: skill
+			}
+		}))
+		)
+	]
+	let SaveAndSkillList = MixedList(items)
+	let ret = <div>
 		<Ability ability={ability} />
-		<MixedList items={
-		[
-			{
-				component: SavingThrowListItem,
-				data: {savingThrow}
-			},
-			...skills.map((skill) => ({
-				component: SkillListItem,
-				data: {skill}
-			})
-		)]
-		} />
+		<SaveAndSkillList />
 
 	</div>
-)
+	return ret
+}
 
 AbilityAndSkills.propsTypes = {
 	ability: PropTypes.shape({

@@ -1,31 +1,31 @@
 import React, {PropTypes} from 'react'
 import AbilityAndSkills from './AbilityAndSkills.js'
 
-const AbilityBlock = ({abilities}) => (
-		<div>
+const AbilityBlock = (abilities) => {
+	return <div>
 			proficiency bonus
 			inspiration
 			<ul>
-				{abilities.map((ability)=>(
-					<li>
-						<AbilityAndSkills ability={ability} skills={skills} savingThrow={savingThrow}/>
+				{ Object.keys(abilities).map((abilityKey)=>(
+					<li key={abilityKey}>
+						<AbilityAndSkills  {...abilities[abilityKey]} />
 					</li>
 				))}
 			</ul>
 			passiveWisdom
 		</div>
-)
+}
 
-AbilityBlock.propsTypes = {
-	abilities: PropTypes.arrayOf(PropTypes.shape({
-		id: PropTypes.string.isRequired,
+AbilityBlock.propsTypes = PropTypes.objectOf({
+	ability: PropTypes.shape({
+		name: PropTypes.string.isRequired,
+		//id: PropTypes.string.isRequired,
 		raw: PropTypes.number.isRequired,
 		mod: PropTypes.number.isRequired
-	}).isRequired
-	).isRequired,
-	skills: PropTypes.array.isRequired,
-	savingThrow: PropTypes.array.isRequired
-}
+	}).isRequired,
+	skill: PropTypes.object.isRequired,
+	savingThrow: PropTypes.object.isRequired
+}).isRequired
 
 export default AbilityBlock
 

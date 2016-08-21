@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 
 const Ability = ({ability, onChangeRaw}) => (
 	<div>
-		<input class="raw-ability"
+		<input
 			value={ability.raw}
 			onChange={ (val) => (onChangeRaw(ability.id, raw)) }
 		/>

@@ -1,6 +1,6 @@
 import React from 'react'
 
 const SkillListItem = () => (
-		<li> saving throw here </li>
+		<span>saving throw here</span>
 	)
 export default SkillListItem
