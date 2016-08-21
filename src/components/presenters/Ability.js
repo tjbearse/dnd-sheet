@@ -1,15 +1,16 @@
 import React, {PropTypes} from 'react'
+import {getAbilityModifier} from '../../dndConstants.js'
 
-const Ability = ({ability, onChangeRaw}) => (
-	<div>
+const Ability = ({ability, onChangeRaw}) => {
+	let mod = getAbilityModifier(ability.raw) || 0
+	return <div>
 		<input
 			value={ability.raw}
-			onChange={ (val) => (onChangeRaw(ability.id, raw)) }
 		/>
-		<span>{ability.mod}</span>
+		<span>{mod}</span>
 		<span>{ability.name}</span>
 	</div>
-)
+}
 
 Ability.propsTypes = {
 	ability: PropTypes.shape({

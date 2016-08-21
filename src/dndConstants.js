@@ -17,6 +17,10 @@ const ABILITY_SKILLS = new Map([
 	['WIS', ['Animal Handling', 'Insight', 'Medicine', 'Perception', 'Survival']],
 	['CHR', ['Deception', 'Intimidation', 'Performance', 'Persuasion']]
 ])
-const SKILLS_LIST = [...ABILITY_SKILLS.values()]
+const SKILLS_LIST = [...ABILITY_SKILLS.values()].reduce((list, entry)=>[...list, ...entry])
 
-export {ABILITIES, ABILITY_NAMES, ABILITY_SKILLS, SKILLS_LIST}
+function getAbilityModifier(raw){
+	return Math.floor((raw - 10) / 2)
+}
+
+export {ABILITIES, ABILITY_NAMES, ABILITY_SKILLS, SKILLS_LIST, getAbilityModifier}

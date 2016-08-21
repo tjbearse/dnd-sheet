@@ -13,17 +13,14 @@ const AbilityAndSkills = ({ability, skills, savingThrow}) => {
 		,
 		...(Object.keys(skills).map((skill) => ({
 			component: SkillListItem,
-			data: {
-				skill: Object.assign({key: skill}, skills[skill] ),
-				key: skill
-			}
+			data: Object.assign({key: skill}, skills[skill]),
 		}))
 		)
 	]
-	let SaveAndSkillList = MixedList(items)
+	//let SaveAndSkillList = MixedList(items)
 	let ret = <div>
 		<Ability ability={ability} />
-		<SaveAndSkillList />
+		<MixedList items={items} />
 
 	</div>
 	return ret

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SavingThrowListItem = () => (
-		<li> saving throw here </li>
+const SavingThrowListItem = ({savingThrow}) => (
+		<li>{savingThrow.name} saving throw {savingThrow.prof}</li>
 	)
 export default SavingThrowListItem
