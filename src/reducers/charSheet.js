@@ -2,8 +2,15 @@ import {combineReducers} from 'redux'
 import {ABILITIES, ABILITY_NAMES, ABILITY_SKILLS, SKILLS_LIST} from '../dndConstants.js'
 
 
-const abilities = (state={}, action) => state
+function abilities(state=
+	new Map(ABILITIES.map(ability => [ability, {
+		raw: 0
+	}])),
+	action) {
+	return state
+}
 
+/*
 function makeSavingThrowReducer(abilityKey) {
 	return (state={
 		prof: false,
@@ -16,18 +23,19 @@ const savingThrows = combineReducers(
 	), {}))
 	)
 )
-
-function makeSkillReducer(skillKey) {
-	return (state={
-		prof: false,
-		name: skillKey
-	}, action) => state
+*/
+function savingThrows (
+	state= new Map(ABILITIES.map(ability=>[ability, {prof:false}])),
+	action
+) {
+	return state
 }
-const skills = combineReducers(
-	SKILLS_LIST.reduce((obj, skill) => (
-		Object.assign(obj, {[skill]: makeSkillReducer(skill)})
-	), {})
-)
+
+function skills (state=
+	new Map(SKILLS_LIST.map((skill) => [skill, {prof: false, name: skill}]))
+, action) {
+	return state
+}
 
 const skillsAndAbilities = combineReducers({
 	abilities,

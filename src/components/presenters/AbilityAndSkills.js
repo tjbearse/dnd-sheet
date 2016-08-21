@@ -8,12 +8,12 @@ const AbilityAndSkills = ({ability, skills, savingThrow}) => {
 	let items = [
 		{
 			component: SavingThrowListItem,
-			data: {savingThrow, key: 'savingThrow'}
+			data: savingThrow
 		}
 		,
-		...(Object.keys(skills).map((skill) => ({
+		...(skills.map((skill) => ({
 			component: SkillListItem,
-			data: Object.assign({key: skill}, skills[skill]),
+			data: skill
 		}))
 		)
 	]

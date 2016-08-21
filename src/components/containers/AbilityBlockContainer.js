@@ -9,15 +9,24 @@ const mapStateToProps = ({skillsAndAbilities:
 (
 	// -> {[ability]: {ability, savingThrow, skills: {[skill]: skill}}}
 	ABILITIES.reduce((obj, key) => {
+		let abilityName = ABILITY_NAMES.get(key)
 		obj[key] = {
-			ability: Object.assign({name: ABILITY_NAMES[key]}, abilities[key]),
-			savingThrow: savingThrows[key],
-			skills: Object.assign({},
-				...(ABILITY_SKILLS.get(key).map((skill)=>({
-					[skill]: skills[skill]
-				})))
-			)
+			ability:Object.assign({key, name: abilityName}, abilities[key]),
+
+			savingThrow: Object.assign({
+				key:key+'_SAVE',
+				name: abilityName + ' Saving Throw'
+			}, savingThrows[key]),
+
+			skills: ABILITY_SKILLS.get(key).map(
+				(skill)=>(
+					Object.assign({
+						key:skill,
+						name:skill
+					}, skills.get(skill))
+				))
 		}
+
 		return obj
 	}, {})
 )

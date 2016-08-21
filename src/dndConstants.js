@@ -23,4 +23,32 @@ function getAbilityModifier(raw){
 	return Math.floor((raw - 10) / 2)
 }
 
-export {ABILITIES, ABILITY_NAMES, ABILITY_SKILLS, SKILLS_LIST, getAbilityModifier}
+const levelToXPAndBonus = new Map([
+	[0,			1,	2],
+	[200,		2,	2],
+	[900,		3,	2],
+	[2700,		4,	2],
+	[6500,		5,	3],
+	[1400,		6,	3],
+	[23000,		7,	3],
+	[34000,		8,	3],
+	[48000,		9,	4],
+	[64000,		10,	4],
+	[85000,		11,	4],
+	[100000,	12,	4],
+	[120000,	13,	5],
+	[140000,	14,	5],
+	[165000,	15,	5],
+	[195000,	16,	5],
+	[225000,	17,	6],
+	[265000,	18,	6],
+	[305000,	19,	6],
+	[355000,	20,	6]
+].map(([xp, level, bonus]) => [level, {xp, bonus}])
+)
+
+function getProficiencyForLevel(level){
+	return levelToXPAndBonus.get(leve).bonus
+}
+
+export {ABILITIES, ABILITY_NAMES, ABILITY_SKILLS, SKILLS_LIST, getAbilityModifier, getProficiencyForLevel}
