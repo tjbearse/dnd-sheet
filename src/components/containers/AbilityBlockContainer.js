@@ -11,7 +11,7 @@ const mapStateToProps = ({skillsAndAbilities:
 	ABILITIES.reduce((obj, key) => {
 		let abilityName = ABILITY_NAMES.get(key)
 		obj[key] = {
-			ability:Object.assign({key, name: abilityName}, abilities[key]),
+			ability:Object.assign({key, name: abilityName}, abilities.get(key)),
 
 			savingThrow: Object.assign({
 				key:key+'_SAVE',

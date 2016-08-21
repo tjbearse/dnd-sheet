@@ -1,8 +1,10 @@
 import React from 'react'
 
+import TE from './TE.js'
+
 const LabledTE = ({classes, label, value}) => (
 		<span>
-			<input value={value || ''} />
+			<TE value={value} />
 			<label>{label}</label>
 		</span>
 )

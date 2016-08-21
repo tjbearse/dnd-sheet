@@ -1,13 +1,25 @@
 import React, {PropTypes} from 'react'
 import {getAbilityModifier} from '../../dndConstants.js'
+import TE from './TE.js'
 
 const Ability = ({ability, onChangeRaw}) => {
 	let mod = getAbilityModifier(ability.raw) || 0
 	return <div>
-		<input
+		<TE
+			style={{
+				width: 24
+			}}
 			value={ability.raw}
 		/>
-		<span>{mod}</span>
+		<TE
+			disabled
+			style={{
+				width: 50,
+				fontSize: '24pt',
+				textAlign: 'center'
+			}}
+			value={mod}
+		/>
 		<span>{ability.name}</span>
 	</div>
 }
