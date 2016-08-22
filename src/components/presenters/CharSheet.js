@@ -16,21 +16,31 @@ const CharSheet = () => {
 		marginRight: 'auto',
 		marginTop: '60px',
 		padding: '18px 30px',
-		backgroundColor: '#fff',
+		//backgroundColor: '#fff',
 		position: 'relative',
-		zIndex: -2
+		overflow: 'auto'
 	}
 	return <div style={pageStyle}>
 		<div style={{
 			backgroundImage: 'url(bg.png)',
 			backgroundSize: '100%',
+			backgroundRepeat: 'no-repeat',
 			position: 'absolute',
 			right: 0,
 			left: 0,
 			top: 0,
 			bottom: 0,
-			opacity: .2,
+			opacity: .5,
 			zIndex: -1
+		}}/>
+		<div style={{
+			backgroundColor: '#fff',
+			position: 'absolute',
+			right: 0,
+			left: 0,
+			top: 0,
+			bottom: 0,
+			zIndex: -2
 		}}/>
 		<div style={{
 			width: '100%',
@@ -40,10 +50,10 @@ const CharSheet = () => {
 			<NameBlockContainer />
 		</div>
 		<div style={{
-			width: '33%',
+			width: 236,
 			float: 'left',
-			backgroundColor: '#e7e8e8',
-			margin: 8
+			margin: 8,
+			border: '1px solid'
 		}}>
 			<AbilityBlockContainer />
 		</div>

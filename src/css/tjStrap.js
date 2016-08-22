@@ -4,6 +4,6 @@ const TJStrap = {
 		paddingLeft: 0
 	}
 }
-
-export default TJStrap
+import * as Bevels from './BevelBox.js'
+export {TJStrap as default, Bevels}
 

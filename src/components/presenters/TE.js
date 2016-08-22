@@ -6,7 +6,7 @@ const TE = ({value='', style={}, disabled=false, onChange=a=>a}) => (
 		disabled={disabled}
 		defaultValue={value || ''}
 		style={m(
-			{},
+			{} ,
 			style
 		)}
 		onChange={onChange}

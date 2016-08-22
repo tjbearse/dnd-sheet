@@ -1,10 +1,17 @@
 import React, {PropTypes} from 'react'
 import AbilityAndSkills from './AbilityAndSkills.js'
 
-import tjStrap from '../../css/tjStrap.js'
+import tjStrap, {Bevels} from '../../css/tjStrap.js'
+
+let BevelSeries = Bevels.BevelSeries
+const FancyBevel = ({children}) => (
+	<BevelSeries bevels={[[5, '#c2c3c6', 4], [3, '#ffffff',1], [3, '#c2c3c6',1]]}>
+		{children}
+	</BevelSeries>
+)
 
 const AbilityBlock = (abilities) => {
-	return <div>
+	return <FancyBevel>
 			proficiency bonus
 			inspiration
 			<ul style={tjStrap.nonlist}>
@@ -15,7 +22,7 @@ const AbilityBlock = (abilities) => {
 				))}
 			</ul>
 			passiveWisdom
-		</div>
+		</FancyBevel>
 }
 
 AbilityBlock.propsTypes = PropTypes.objectOf({
