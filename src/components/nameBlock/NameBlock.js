@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react'
-import LabeledTE from './LabledTE.js'
+import LabeledTE from '../gen/LabledTE.js'
 
 const NameBlock = (charInfo) => (
 	<div style={{

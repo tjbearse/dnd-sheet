@@ -1,5 +1,5 @@
 import React from 'react'
-import {merge as m} from '../../css/cssUtil.js'
+import {merge as m} from '../../css.js'
 
 const TE = ({value='', style={}, disabled=false, onChange=a=>a}) => (
 	<input

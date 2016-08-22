@@ -1,3 +1,13 @@
+const nonlist = {
+	listStyle: 'none',
+	paddingLeft: 0
+}
+const colors = {
+	grey: '#dcdddf',
+	dgrey: '#c2c3c6',
+	white: '#ffffff',
+	black: '#000000'
+}
 
 // idea credit to Christopher Chedeau's talk JS in CSS
 function merge(...styles){
@@ -10,4 +20,5 @@ function merge(...styles){
 	return style
 }
 
-export {merge}
+export {merge,colors,nonlist}
+

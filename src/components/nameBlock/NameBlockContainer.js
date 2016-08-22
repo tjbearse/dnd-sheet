@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import NameBlock from '../presenters/NameBlock.js'
+import NameBlock from './NameBlock.js'
 
 const mapStateToProps = ({charInfo}) => {
 	return charInfo

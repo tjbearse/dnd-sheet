@@ -1,7 +1,7 @@
 import React from 'react'
 
-import AbilityBlockContainer from '../containers/AbilityBlockContainer.js'
-import NameBlockContainer from '../containers/NameBlockContainer.js'
+import AbilityBlockContainer from './abilities/AbilityBlockContainer.js'
+import NameBlockContainer from './nameBlock/NameBlockContainer.js'
 	/*		HealthBlock,
 	PersonalityBlock,
 	AttacksBlock,

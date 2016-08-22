@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import {getAbilityModifier} from '../../dndConstants.js'
-import TE from './TE.js'
+import TE from '../gen/TE.js'
 
 const Ability = ({ability, onChangeRaw}) => {
 	let mod = getAbilityModifier(ability.raw) || 0

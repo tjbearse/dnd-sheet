@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import Ability from './Ability.js'
-import MixedList from './MixedList.js'
+import MixedList from '../gen/MixedList.js'
 import SavingThrowListItem from './SavingThrowListItem.js'
 import SkillListItem from './SkillListItem.js'
 

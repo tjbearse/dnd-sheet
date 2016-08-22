@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducer from './reducers/charSheet.js'
-import CharSheet from './components/presenters/CharSheet'
+import CharSheet from './components/CharSheet.js'
 
 let store = createStore(reducer)
 render(

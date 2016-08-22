@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
-//import { setVisibilityFilter } from '../actions'
-import AbilityBlock from '../presenters/AbilityBlock.js'
+import AbilityBlock from './AbilityBlock.js'
 import { ABILITIES, ABILITY_NAMES, ABILITY_SKILLS } from '../../dndConstants.js'
 
 const mapStateToProps = ({skillsAndAbilities:

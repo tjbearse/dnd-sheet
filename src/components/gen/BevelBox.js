@@ -1,7 +1,7 @@
 import React from 'react'
-import {merge as m} from './cssUtil.js'
+import {merge as m, colors as COLOR} from '../../css.js'
 
-const BevelBox = ({children, bevel=10, color='#fff', style}) => {
+const BevelBox = ({children, bevel=10, color=COLOR.white, style}) => {
 	let gradientInfo = [
 		[135, 'top left'],
 		[225, 'top right'],
@@ -36,4 +36,10 @@ const BevelSeries = ({children, bevels}) => {
 	), children)
 }
 
-export {BevelBox as default, BevelSeries}
+const darkGreyBevels = [[5, COLOR.dgrey, 4], [3, COLOR.white,1], [3, COLOR.dgrey,1]]
+const DarkGreyBevelBox = (args) => BevelSeries(Object.assign({}, args, {bevels: darkGreyBevels}))
+
+const greyBevels = [[5, COLOR.grey, 4], [3, COLOR.white,1], [3, COLOR.grey,1]]
+const GreyBevelBox = (args) => BevelSeries(Object.assign({}, args, {bevels: greyBevels}))
+
+export {DarkGreyBevelBox, GreyBevelBox}
