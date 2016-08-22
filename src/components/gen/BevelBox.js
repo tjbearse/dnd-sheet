@@ -1,7 +1,7 @@
 import React from 'react'
 import {merge as m, colors as COLOR} from '../../css.js'
 
-const BevelBox = ({children, bevel=10, color=COLOR.white, style}) => {
+const BevelBox = ({children, bevel=10, color=COLOR.white, style={}}) => {
 	let gradientInfo = [
 		[135, 'top left'],
 		[225, 'top right'],
@@ -50,4 +50,31 @@ const GreyBevelBox = makeBevelSeries({
 	style: {height: "100%"}
 })
 
-export {DarkGreyBevelBox, GreyBevelBox}
+
+const EdgeBevelBox = ({children, vertRunners=true, style}) => {
+	let bevels = [[4, COLOR.black,1], [4, COLOR.white,0]],
+		margins = vertRunners? [5,2]: [2,5],
+		kills = vertRunners? ['borderTop', 'borderBottom']: ['borderRight', 'borderLeft']
+	let runnerStyle = {
+		border: '1px solid',
+		margin: `${margins[0]}px ${margins[1]}px`,
+		[kills[0]]: 'none',
+		[kills[1]]: 'none',
+		height:'100%'
+	}
+	return <div style={style}>
+		<BevelSeries bevels={bevels} style={{}}>
+			<div style={{
+				border: 'solid 1px',
+				borderRadius: 16,
+				height:'100%'
+			}}>
+			<div style={runnerStyle}>
+					{children}
+				</div>
+			</div>
+		</BevelSeries>
+	</div>
+}
+
+export {DarkGreyBevelBox, GreyBevelBox, EdgeBevelBox}

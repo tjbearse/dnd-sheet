@@ -1,21 +1,23 @@
 import React, {PropTypes} from 'react'
 import {getAbilityModifier} from '../../dndConstants.js'
+import {EdgeBevelBox} from '../gen/BevelBox.js'
 import TE from '../gen/TE.js'
 
 const Ability = ({ability, onChangeRaw}) => {
 	let mod = getAbilityModifier(ability.raw) || 0
 	return <div style={{
-		border: '1px solid',
 		width: 85,
 		height: 85,
 		backgroundColor: '#fff'
 	}}>
-		<TE
-			style={{
-				width: 24
-			}}
-			value={ability.raw}
-		/>
+			<TE
+				style={{
+					width: 24
+				}}
+				value={ability.raw}
+			/>
+
+		<EdgeBevelBox vertRunners={false} style={{height: 70}}>
 		<TE
 			disabled
 			style={{
@@ -25,6 +27,7 @@ const Ability = ({ability, onChangeRaw}) => {
 			}}
 			value={mod}
 		/>
+		</EdgeBevelBox>
 		<span>{ability.name}</span>
 	</div>
 }
