@@ -19,7 +19,7 @@ const BevelBox = ({children, bevel=10, color=COLOR.white, style}) => {
 				background: color,
 				background: background,
 				backgroundSize: '50% 50%',
-				backgroundRepeat: 'no-repeat'
+				backgroundRepeat: 'no-repeat',
 			},
 			style
 			)}
@@ -28,18 +28,26 @@ const BevelBox = ({children, bevel=10, color=COLOR.white, style}) => {
 		</div>
 }
 
-const BevelSeries = ({children, bevels}) => {
+const BevelSeries = ({children, bevels, style}) => {
 	return bevels.reduceRight((child, [bevel, color, pad])=>(
-		<BevelBox bevel={bevel} color={color} style={{padding:pad}}>
+		<BevelBox bevel={bevel} color={color} style={Object.assign({padding:pad}, style)}>
 			{child}
 		</BevelBox>
 	), children)
 }
 
-const darkGreyBevels = [[5, COLOR.dgrey, 4], [3, COLOR.white,1], [3, COLOR.dgrey,1]]
-const DarkGreyBevelBox = (args) => BevelSeries(Object.assign({}, args, {bevels: darkGreyBevels}))
+function makeBevelSeries(myArgs){
+	return (theirArgs) => BevelSeries(Object.assign({}, myArgs, theirArgs))
+}
 
-const greyBevels = [[5, COLOR.grey, 4], [3, COLOR.white,1], [3, COLOR.grey,1]]
-const GreyBevelBox = (args) => BevelSeries(Object.assign({}, args, {bevels: greyBevels}))
+const DarkGreyBevelBox = makeBevelSeries({
+	bevels: [[5, COLOR.dgrey, 4], [3, COLOR.white,1], [3, COLOR.dgrey,1]],
+	style: {height: "100%"}
+})
+
+const GreyBevelBox = makeBevelSeries({
+	bevels: [[5, COLOR.grey, 4], [3, COLOR.white,1], [3, COLOR.grey,1]],
+	style: {height: "100%"}
+})
 
 export {DarkGreyBevelBox, GreyBevelBox}

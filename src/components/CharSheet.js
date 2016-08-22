@@ -2,12 +2,14 @@ import React from 'react'
 
 import AbilityBlockContainer from './abilities/AbilityBlockContainer.js'
 import NameBlockContainer from './nameBlock/NameBlockContainer.js'
-	/*		HealthBlock,
-	PersonalityBlock,
+import HealthBlockContainer from './health/HealthBlockContainer.js'
+import PersonalityContainer from './personality/PersonalityContainer.js'
+/*
 	AttacksBlock,
 	FeaturesBlock,
 	EquipmentBlock,
-	OtherBlock*/
+	OtherBlock
+*/
 
 const CharSheet = () => {
 	let pageStyle = {
@@ -52,16 +54,25 @@ const CharSheet = () => {
 		<div style={{
 			width: 236,
 			float: 'left',
-			margin: 8,
-			border: '1px solid'
+			margin: '8px 6px 8px 8px'
 		}}>
 			<AbilityBlockContainer />
 		</div>
-		<div>
-		HealthBlock
+		<div style={{
+			width: 236,
+			float: 'left',
+			margin: '8px 6px',
+			height: 316
+		}}>
+			<HealthBlockContainer />
 		</div>
-		<div>
-		PersonalityBlock
+		<div style={{
+			width: 236,
+			float: 'left',
+			margin: '8px 6px',
+			height: 316
+		}}>
+			<PersonalityContainer />
 		</div>
 		<div>
 		AttacksBlock
